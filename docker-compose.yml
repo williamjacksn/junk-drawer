@@ -1,0 +1,7 @@
+version: '3.7'
+
+services:
+  junk-drawer:
+    image: docker.pkg.github.com/williamjacksn/junk-drawer/junk-drawer
+    build: .
+    init: True
