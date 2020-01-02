@@ -1,7 +1,10 @@
+import datetime
 import flask
 import junk_drawer.settings
 import logging
+import pathlib
 import sys
+import uuid
 import waitress
 import werkzeug.middleware.proxy_fix
 import werkzeug.utils
@@ -21,6 +24,9 @@ def index():
             return flask.render_template('upload-file.html')
         file = flask.request.files.get('file')
         filename = werkzeug.utils.secure_filename(file.filename)
+        ext = pathlib.Path(filename).suffix
+        u = str(uuid.uuid4())[:8]
+        filename = f'{datetime.datetime.utcnow():%Y-%m-%d-%H%M%S}-{u}{ext}'
         file.save(str(settings.file_upload_dir / filename))
         return flask.redirect(flask.url_for('index'))
     return flask.render_template('sign-in.html')
