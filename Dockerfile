@@ -14,3 +14,5 @@ ENV APP_VERSION="2020.2" \
 
 ENTRYPOINT ["/usr/local/bin/python"]
 CMD ["/junk-drawer/run.py"]
+
+HEALTHCHECK CMD ["/usr/bin/wget", "--spider", "--quiet", "http://localhost:8080/"]
