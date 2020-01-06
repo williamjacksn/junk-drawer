@@ -6,7 +6,7 @@ RUN /usr/local/bin/pip install --no-cache-dir --requirement /junk-drawer/require
 
 COPY . /junk-drawer
 
-ENV APP_VERSION="2020.1" \
+ENV APP_VERSION="2020.2" \
     FILE_UPLOAD_DIR="/file-uploads" \
     PASSWORD="" \
     PYTHONUNBUFFERED="1" \
