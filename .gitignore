@@ -1,3 +1,5 @@
-.idea
-docker-compose.override.yaml
 __pycache__
+.idea
+.venv
+.vscode
+docker-compose.override.yaml
