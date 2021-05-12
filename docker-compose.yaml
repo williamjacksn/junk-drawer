@@ -2,5 +2,6 @@ version: '3.8'
 
 services:
   junk-drawer:
+    build: .
     image: ghcr.io/williamjacksn/junk-drawer
     init: true
