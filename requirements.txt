@@ -4,11 +4,9 @@
 #
 #    pip-compile --pip-args='--extra-index-url https://alpine-wheels.github.io/index'
 #
---extra-index-url https://alpine-wheels.github.io/index
-
 click==8.0.0
     # via flask
-flask==2.0.0
+flask==2.0.1
     # via -r requirements.in
 itsdangerous==2.0.0
     # via flask
