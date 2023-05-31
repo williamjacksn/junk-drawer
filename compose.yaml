@@ -3,3 +3,12 @@ services:
     build: .
     image: ghcr.io/williamjacksn/junk-drawer
     init: true
+
+  shell:
+    entrypoint:
+      - /bin/sh
+    image: ghcr.io/williamjacksn/junk-drawer
+    init: true
+    volumes:
+      - ./:/home/python/junk-drawer
+    working_dir: /home/python/junk-drawer
