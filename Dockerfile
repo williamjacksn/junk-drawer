@@ -20,7 +20,7 @@ WORKDIR /home/python/junk-drawer
 ENTRYPOINT ["/home/python/venv/bin/python", "/home/python/junk-drawer/run.py"]
 
 LABEL org.opencontainers.image.authors="William Jackson <william@subtlecoolness.com>" \
-      org.opencontainers.image.source="https://github.com/williamjacksn/junk-drawer/"
+      org.opencontainers.image.source="https://github.com/williamjacksn/junk-drawer"
 
 COPY --chown=python:python run.py /home/python/junk-drawer/run.py
 COPY --chown=python:python junk_drawer /home/python/junk-drawer/junk_drawer
