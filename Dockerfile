@@ -8,7 +8,7 @@ RUN /usr/local/bin/python -m venv /home/python/venv
 COPY --chown=python:python requirements.txt /home/python/junk-drawer/requirements.txt
 RUN /home/python/venv/bin/pip install --no-cache-dir --requirement /home/python/junk-drawer/requirements.txt
 
-ENV APP_VERSION="2021.2" \
+ENV APP_VERSION="2024.1" \
     FILE_UPLOAD_DIR="/home/python/file-uploads" \
     PASSWORD="" \
     PYTHONDONTWRITEBYTECODE="1" \
