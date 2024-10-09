@@ -10,7 +10,7 @@ RUN /home/python/venv/bin/pip install --no-cache-dir --requirement /home/python/
 
 ENV APP_VERSION="2024.1" \
     FILE_UPLOAD_DIR="/home/python/file-uploads" \
-    PASSWORD="" \
+    PATH="/home/python/venv/bin:${PATH}" \
     PYTHONDONTWRITEBYTECODE="1" \
     PYTHONUNBUFFERED="1" \
     SECRET_KEY="" \
