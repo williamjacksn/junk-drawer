@@ -4,6 +4,15 @@ services:
     image: ghcr.io/williamjacksn/junk-drawer
     init: true
 
+  pip-compile:
+    entrypoint:
+      - /home/python/venv/bin/pip-compile
+    image: ghcr.io/williamjacksn/pip-tools:py3.12
+    init: true
+    volumes:
+      - ./:/home/python/junk-drawer
+    working_dir: /home/python/junk-drawer
+
   shell:
     entrypoint:
       - /bin/bash
