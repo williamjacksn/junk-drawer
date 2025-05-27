@@ -11,7 +11,6 @@ ENV APP_VERSION="2024.1" \
     FILE_UPLOAD_DIR="/home/python/file-uploads" \
     PYTHONDONTWRITEBYTECODE="1" \
     PYTHONUNBUFFERED="1" \
-    SECRET_KEY="" \
     TZ="Etc/UTC"
 
 LABEL org.opencontainers.image.authors="William Jackson <william@subtlecoolness.com>" \
