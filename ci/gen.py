@@ -15,6 +15,22 @@ def gen(content: dict, target: str):
     )
 
 
+def gen_compose():
+    target = "compose.yaml"
+    content = {
+        "services": {
+            "junk-drawer": {"build": ".", "image": CONTAINER_IMAGE, "init": True},
+            "shell": {
+                "entrypoint": ["/bin/bash"],
+                "image": CONTAINER_IMAGE,
+                "init": True,
+                "volumes": ["./:/app"],
+            },
+        }
+    }
+    gen(content, target)
+
+
 def gen_dependabot():
     target = ".github/dependabot.yaml"
     content = {
@@ -148,6 +164,7 @@ def gen_ruff_workflow():
 
 
 def main():
+    gen_compose()
     gen_dependabot()
     gen_deploy_workflow()
     gen_ruff_workflow()
