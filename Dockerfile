@@ -5,7 +5,7 @@ USER python
 
 WORKDIR /app
 COPY --chown=python:python .python-version pyproject.toml uv.lock ./
-RUN uv sync --frozen
+RUN uv sync --frozen --no-dev
 
 ENV APP_VERSION="2024.1" \
     FILE_UPLOAD_DIR="/home/python/file-uploads" \
@@ -20,4 +20,4 @@ LABEL org.opencontainers.image.authors="William Jackson <william@subtlecoolness.
 COPY --chown=python:python run.py ./
 COPY --chown=python:python junk_drawer ./junk_drawer
 
-ENTRYPOINT ["uv", "run", "run.py"]
+ENTRYPOINT ["uv", "run", "--no-sync", "run.py"]
