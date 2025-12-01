@@ -1,19 +1,13 @@
-{
-  "services": {
-    "junk-drawer": {
-      "build": ".",
-      "image": "ghcr.io/williamjacksn/junk-drawer",
-      "init": true
-    },
-    "shell": {
-      "entrypoint": [
-        "/bin/bash"
-      ],
-      "image": "ghcr.io/williamjacksn/junk-drawer",
-      "init": true,
-      "volumes": [
-        "./:/app"
-      ]
-    }
-  }
-}
+services:
+  junk-drawer:
+    build: .
+    image: ghcr.io/williamjacksn/junk-drawer
+    init: true
+
+  shell:
+    entrypoint:
+      - /bin/bash
+    image: ghcr.io/williamjacksn/junk-drawer
+    init: true
+    volumes:
+      - ./:/app
